@@ -1,0 +1,249 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  arm-pc-fuchsia-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm-pc-linux-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm-pc-macos-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm-pc-windows-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm-pc-windows-msvc:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm64-pc-fuchsia-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm64-pc-linux-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm64-pc-macos-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm64-pc-windows-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  arm64-pc-windows-msvc:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  i386-pc-fuchsia-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  i386-pc-linux-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  i386-pc-macos-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  i386-pc-windows-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  i386-pc-windows-msvc:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv32-pc-fuchsia-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv32-pc-linux-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv32-pc-macos-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv32-pc-windows-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv32-pc-windows-msvc:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv64-pc-fuchsia-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv64-pc-linux-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv64-pc-macos-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv64-pc-windows-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  riscv64-pc-windows-msvc:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  x86_64-pc-fuchsia-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  x86_64-pc-linux-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  x86_64-pc-macos-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  x86_64-pc-windows-gnu:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+  x86_64-pc-windows-msvc:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
