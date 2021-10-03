@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: ubuntu-18.04
 
 on:
   push:
