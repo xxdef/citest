@@ -23,10 +23,11 @@ else
 	CXX = clang++
 endif
 
-ifeq ($(shell which cygpath.exe),)
-ROOTDIR := $(shell pwd)
+ifneq ($(shell which cygpath.exe),)
+	# powershell or cygwin
+	ROOTDIR := $(shell cygpath.exe -w $(shell pwd))
 else
-ROOTDIR := $(shell cygpath.exe -w $(PWD))
+	ROOTDIR := $(PWD)
 endif
 
 
