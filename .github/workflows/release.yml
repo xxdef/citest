@@ -1,4 +1,4 @@
-name: windows-latest
+name: release
 
 on:
   push:
