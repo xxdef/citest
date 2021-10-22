@@ -7,243 +7,99 @@ on:
     branches: [ main ]
 
 jobs:
-  arm-pc-fuchsia-gnu:
+  debug:
     runs-on: ubuntu-18.04
 
     steps:
+    - name: checkout
     - uses: actions/checkout@v2
-    - name: make
-      run: make
 
-  arm-pc-linux-gnu:
-    runs-on: ubuntu-18.04
+    - name: arm-pc-fuchsia-gnu
+      run: make arm-pc-fuchsia-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: arm-pc-linux-gnu
+      run: make arm-pc-linux-gnu
 
-  arm-pc-macos-gnu:
-    runs-on: ubuntu-18.04
+    - name: arm-pc-macos-gnu
+      run: make arm-pc-macos-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: arm-pc-windows-gnu
+      run: make arm-pc-windows-gnu
 
-  arm-pc-windows-gnu:
-    runs-on: ubuntu-18.04
+    - name: arm-pc-windows-msvc
+      run: make arm-pc-windows-msvc
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: arm64-pc-fuchsia-gnu
+      run: make arm64-pc-fuchsia-gnu
 
-  arm-pc-windows-msvc:
-    runs-on: ubuntu-18.04
+    - name: arm64-pc-linux-gnu
+      run: make arm64-pc-linux-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: arm64-pc-macos-gnu
+      run: make arm64-pc-macos-gnu
 
-  arm64-pc-fuchsia-gnu:
-    runs-on: ubuntu-18.04
+    - name: arm64-pc-windows-gnu
+      run: make arm64-pc-windows-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: arm64-pc-windows-msvc
+      run: make arm64-pc-windows-msvc
 
-  arm64-pc-linux-gnu:
-    runs-on: ubuntu-18.04
+    - name: i386-pc-fuchsia-gnu
+      run: make i386-pc-fuchsia-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: i386-pc-linux-gnu
+      run: make i386-pc-linux-gnu
 
-  arm64-pc-macos-gnu:
-    runs-on: ubuntu-18.04
+    - name: i386-pc-macos-gnu
+      run: make i386-pc-macos-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: i386-pc-windows-gnu
+      run: make i386-pc-windows-gnu
 
-  arm64-pc-windows-gnu:
-    runs-on: ubuntu-18.04
+    - name: i386-pc-windows-msvc
+      run: make i386-pc-windows-msvc
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: riscv32-pc-fuchsia-gnu
+      run: make riscv32-pc-fuchsia-gnu
 
-  arm64-pc-windows-msvc:
-    runs-on: ubuntu-18.04
+    - name: riscv32-pc-linux-gnu
+      run: make riscv32-pc-linux-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: riscv32-pc-macos-gnu
+      run: make riscv32-pc-macos-gnu
 
-  i386-pc-fuchsia-gnu:
-    runs-on: ubuntu-18.04
+    - name: riscv32-pc-windows-gnu
+      run: make riscv32-pc-windows-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: riscv32-pc-windows-msvc
+      run: make riscv32-pc-windows-msvc
 
-  i386-pc-linux-gnu:
-    runs-on: ubuntu-18.04
+    - name: riscv64-pc-fuchsia-gnu
+      run: make riscv64-pc-fuchsia-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: riscv64-pc-linux-gnu
+      run: make riscv64-pc-linux-gnu
 
-  i386-pc-macos-gnu:
-    runs-on: ubuntu-18.04
+    - name: riscv64-pc-macos-gnu
+      run: make riscv64-pc-macos-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: riscv64-pc-windows-gnu
+      run: make riscv64-pc-windows-gnu
 
-  i386-pc-windows-gnu:
-    runs-on: ubuntu-18.04
+    - name: riscv64-pc-windows-msvc
+      run: make riscv64-pc-windows-msvc
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: x86_64-pc-fuchsia-gnu
+      run: make x86_64-pc-fuchsia-gnu
 
-  i386-pc-windows-msvc:
-    runs-on: ubuntu-18.04
+    - name: x86_64-pc-linux-gnu
+      run: make x86_64-pc-linux-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: x86_64-pc-macos-gnu
+      run: make x86_64-pc-macos-gnu
 
-  riscv32-pc-fuchsia-gnu:
-    runs-on: ubuntu-18.04
+    - name: x86_64-pc-windows-gnu
+      run: make x86_64-pc-windows-gnu
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv32-pc-linux-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv32-pc-macos-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv32-pc-windows-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv32-pc-windows-msvc:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv64-pc-fuchsia-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv64-pc-linux-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv64-pc-macos-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv64-pc-windows-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  riscv64-pc-windows-msvc:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  x86_64-pc-fuchsia-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  x86_64-pc-linux-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  x86_64-pc-macos-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  x86_64-pc-windows-gnu:
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
-
-  x86_64-pc-windows-msvc:
-
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: x86_64-pc-windows-msvc
+      run: make x86_64-pc-windows-msvc
