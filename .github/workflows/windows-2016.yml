@@ -11,7 +11,6 @@ jobs:
     runs-on: windows-2016
 
     steps:
-    - name: checkout
     - uses: actions/checkout@v2
     - name: arm-pc-fuchsia-gnu
       run: make arm-pc-fuchsia-gnu

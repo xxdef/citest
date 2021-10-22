@@ -10,7 +10,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: checkout
     - uses: actions/checkout@v2
     - name: arm-pc-fuchsia-gnu
       run: make arm-pc-fuchsia-gnu
