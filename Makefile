@@ -2,6 +2,9 @@
 export ROOTDIR
 export TARGETROOT
 export TARGETLIST
+export CC
+export CXX
+
 
 
 ROOTDIR    =
@@ -9,11 +12,23 @@ TARGETROOT =
 TARGETDIR  =
 
 
+ifneq ($(shell which clang-13),)
+	CC = clang-13
+	CXX = clang++-13
+else ifneq ($(shell which clang-12),)
+	CC = clang-12
+	CXX = clang++-12
+else
+	CC = clang
+	CXX = clang++
+endif
+
 ifeq ($(shell which cygpath.exe),)
-ROOTDIR := $(PWD)
+ROOTDIR := $(shell pwd)
 else
 ROOTDIR := $(shell cygpath.exe -w $(PWD))
 endif
+
 
 TARGETROOT = $(ROOTDIR)/releases
 
