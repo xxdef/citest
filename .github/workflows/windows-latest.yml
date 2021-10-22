@@ -11,66 +11,151 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: arm-pc-fuchsia-gnu
-      run: make arm-pc-fuchsia-gnu
+
+    # - name: arm-pc-fuchsia-gnu
+    #   run: make arm-pc-fuchsia-gnu
+
+    # - name: arm-pc-fuchsia-msvc
+    #   run: make arm-pc-fuchsia-msvc
+
     - name: arm-pc-linux-gnu
       run: make arm-pc-linux-gnu
+
+    # - name: arm-pc-linux-msvc
+    #   run: make arm-pc-linux-msvc
+
     - name: arm-pc-macos-gnu
       run: make arm-pc-macos-gnu
+
+    # - name: arm-pc-macos-msvc
+    #   run: make arm-pc-macos-msvc
+
     - name: arm-pc-windows-gnu
       run: make arm-pc-windows-gnu
+
     - name: arm-pc-windows-msvc
       run: make arm-pc-windows-msvc
-    - name: arm64-pc-fuchsia-gnu
-      run: make arm64-pc-fuchsia-gnu
+
+    # - name: arm64-pc-fuchsia-gnu
+    #   run: make arm64-pc-fuchsia-gnu
+
+    # - name: arm64-pc-fuchsia-msvc
+    #   run: make arm64-pc-fuchsia-msvc
+
     - name: arm64-pc-linux-gnu
       run: make arm64-pc-linux-gnu
+
+    # - name: arm64-pc-linux-msvc
+    #   run: make arm64-pc-linux-msvc
+
     - name: arm64-pc-macos-gnu
       run: make arm64-pc-macos-gnu
+
+    # - name: arm64-pc-macos-msvc
+    #   run: make arm64-pc-macos-msvc
+
     - name: arm64-pc-windows-gnu
       run: make arm64-pc-windows-gnu
+
     - name: arm64-pc-windows-msvc
       run: make arm64-pc-windows-msvc
-    - name: i386-pc-fuchsia-gnu
-      run: make i386-pc-fuchsia-gnu
+
+    # - name: i386-pc-fuchsia-gnu
+    #   run: make i386-pc-fuchsia-gnu
+
+    # - name: i386-pc-fuchsia-msvc
+    #   run: make i386-pc-fuchsia-msvc
+
     - name: i386-pc-linux-gnu
       run: make i386-pc-linux-gnu
+
+    # - name: i386-pc-linux-msvc
+    #   run: make i386-pc-linux-msvc
+
     - name: i386-pc-macos-gnu
       run: make i386-pc-macos-gnu
+
+    # - name: i386-pc-macos-msvc
+    #   run: make i386-pc-macos-msvc
+
     - name: i386-pc-windows-gnu
       run: make i386-pc-windows-gnu
+
     - name: i386-pc-windows-msvc
       run: make i386-pc-windows-msvc
-    - name: riscv32-pc-fuchsia-gnu
-      run: make riscv32-pc-fuchsia-gnu
+
+    # - name: riscv32-pc-fuchsia-gnu
+    #   run: make riscv32-pc-fuchsia-gnu
+
+    # - name: riscv32-pc-fuchsia-msvc
+    #   run: make riscv32-pc-fuchsia-msvc
+
     - name: riscv32-pc-linux-gnu
       run: make riscv32-pc-linux-gnu
+
+    # - name: riscv32-pc-linux-msvc
+    #   run: make riscv32-pc-linux-msvc
+
     - name: riscv32-pc-macos-gnu
       run: make riscv32-pc-macos-gnu
-    - name: riscv32-pc-windows-gnu
-      run: make riscv32-pc-windows-gnu
-    - name: riscv32-pc-windows-msvc
-      run: make riscv32-pc-windows-msvc
-    - name: riscv64-pc-fuchsia-gnu
-      run: make riscv64-pc-fuchsia-gnu
+
+    # - name: riscv32-pc-macos-msvc
+    #   run: make riscv32-pc-macos-msvc
+
+    # - name: riscv32-pc-windows-gnu
+    #   run: make riscv32-pc-windows-gnu
+
+    # - name: riscv32-pc-windows-msvc
+    #   run: make riscv32-pc-windows-msvc
+
+    # - name: riscv64-pc-fuchsia-gnu
+    #   run: make riscv64-pc-fuchsia-gnu
+
+    # - name: riscv64-pc-fuchsia-msvc
+    #   run: make riscv64-pc-fuchsia-msvc
+
     - name: riscv64-pc-linux-gnu
       run: make riscv64-pc-linux-gnu
+
+    # - name: riscv64-pc-linux-msvc
+    #   run: make riscv64-pc-linux-msvc
+
     - name: riscv64-pc-macos-gnu
       run: make riscv64-pc-macos-gnu
-    - name: riscv64-pc-windows-gnu
-      run: make riscv64-pc-windows-gnu
-    - name: riscv64-pc-windows-msvc
-      run: make riscv64-pc-windows-msvc
-    - name: x86_64-pc-fuchsia-gnu
-      run: make x86_64-pc-fuchsia-gnu
+
+    # - name: riscv64-pc-macos-msvc
+    #   run: make riscv64-pc-macos-msvc
+
+    # - name: riscv64-pc-windows-gnu
+    #   run: make riscv64-pc-windows-gnu
+
+    # - name: riscv64-pc-windows-msvc
+    #   run: make riscv64-pc-windows-msvc
+
+    # - name: x86_64-pc-fuchsia-gnu
+    #   run: make x86_64-pc-fuchsia-gnu
+
+    # - name: x86_64-pc-fuchsia-msvc
+    #   run: make x86_64-pc-fuchsia-msvc
+
     - name: x86_64-pc-linux-gnu
       run: make x86_64-pc-linux-gnu
+
+    # - name: x86_64-pc-linux-msvc
+    #   run: make x86_64-pc-linux-msvc
+
     - name: x86_64-pc-macos-gnu
       run: make x86_64-pc-macos-gnu
+
+    # - name: x86_64-pc-macos-msvc
+    #   run: make x86_64-pc-macos-msvc
+
     - name: x86_64-pc-windows-gnu
       run: make x86_64-pc-windows-gnu
+
     - name: x86_64-pc-windows-msvc
       run: make x86_64-pc-windows-msvc
+
     - name: release
       uses: softprops/action-gh-release@v0.1.13
       if: startsWith(github.ref, 'refs/tags/')
