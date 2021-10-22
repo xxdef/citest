@@ -1,7 +1,11 @@
 
-CC ?= clang
+CC  = clang$(CLANG_SUFFIX)
 
-CXX ?= clang++
+CXX = clang++$(CLANG_SUFFIX)
+
+AR  = llvm-ar$(CLANG_SUFFIX)
+
+LIB = llvm-lib$(CLANG_SUFFIX)
 
 LD = lld
 
@@ -46,148 +50,148 @@ all:  lib.$(TARGET)
 
 .PHONY: $(addprefix lib.,$(TARGETLIST))
 lib.arm-pc-fuchsia-gnu:      $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-fuchsia-msvc:     $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-linux-gnu:        $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-linux-msvc:       $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-macos-gnu:        $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-macos-msvc:       $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-windows-gnu:      $(LIST_O)
-	llvm-lib /machine:arm /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:arm /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm-pc-windows-msvc:     $(LIST_O)
-	llvm-lib /machine:arm /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:arm /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-fuchsia-gnu:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-fuchsia-msvc:   $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-linux-gnu:      $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-linux-msvc:     $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-macos-gnu:      $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-macos-msvc:     $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-windows-gnu:    $(LIST_O)
-	llvm-lib /machine:arm64 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:arm64 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.arm64-pc-windows-msvc:   $(LIST_O)
-	llvm-lib /machine:arm64 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:arm64 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-fuchsia-gnu:     $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-fuchsia-msvc:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-linux-gnu:       $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-linux-msvc:      $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-macos-gnu:       $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-macos-msvc:      $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-windows-gnu:     $(LIST_O)
-	llvm-lib /machine:x86 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:x86 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.i386-pc-windows-msvc:    $(LIST_O)
-	llvm-lib /machine:x86 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:x86 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-fuchsia-gnu:  $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-fuchsia-msvc: $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-linux-gnu:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-linux-msvc:   $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-macos-gnu:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-macos-msvc:   $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-windows-gnu:  $(LIST_O)
-	llvm-lib /machine:riscv32 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:riscv32 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv32-pc-windows-msvc: $(LIST_O)
-	llvm-lib /machine:riscv32 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:riscv32 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-fuchsia-gnu:  $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-fuchsia-msvc: $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-linux-gnu:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-linux-msvc:   $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-macos-gnu:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-macos-msvc:   $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-windows-gnu:  $(LIST_O)
-	llvm-lib /machine:riscv64 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:riscv64 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.riscv64-pc-windows-msvc: $(LIST_O)
-	llvm-lib /machine:riscv64 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:riscv64 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-fuchsia-gnu:   $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-fuchsia-msvc:  $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-linux-gnu:     $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-linux-msvc:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-macos-gnu:     $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-macos-msvc:    $(LIST_O)
-	llvm-ar rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
+	$(AR) rcs --format=gnu $(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-windows-gnu:   $(LIST_O)
-	llvm-lib /machine:x64 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:x64 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 lib.x86_64-pc-windows-msvc:  $(LIST_O)
-	llvm-lib /machine:x64 /out:$(TARGETROOT)/$@ $(LIST_O)
+	$(LIB) /machine:x64 /out:$(TARGETROOT)/$@ $(LIST_O)
 
 
 $(TARGETDIR)/%.o: %.c $(LIST_H)
