@@ -1,12 +1,9 @@
 
 export ROOTDIR
-export TARGETROOT
 export TARGETLIST
 
 
 ROOTDIR    =
-TARGETROOT =
-TARGETDIR  =
 
 
 ifneq ($(shell which cygpath.exe),)
@@ -15,9 +12,6 @@ ifneq ($(shell which cygpath.exe),)
 else
 	ROOTDIR := $(PWD)
 endif
-
-
-TARGETROOT = $(ROOTDIR)/release
 
 
 # See: https://clang.llvm.org/docs/CrossCompilation.html#target-triple
@@ -73,55 +67,6 @@ TARGETLIST += x86_64-pc-windows-gnu
 TARGETLIST += x86_64-pc-windows-msvc
 
 
-arm-pc-fuchsia-gnu:      TARGETDIR := $(TARGETROOT)/arm-pc-fuchsia-gnu
-arm-pc-fuchsia-msvc:     TARGETDIR := $(TARGETROOT)/arm-pc-fuchsia-msvc
-arm-pc-linux-gnu:        TARGETDIR := $(TARGETROOT)/arm-pc-linux-gnu
-arm-pc-linux-msvc:       TARGETDIR := $(TARGETROOT)/arm-pc-linux-msvc
-arm-pc-macos-gnu:        TARGETDIR := $(TARGETROOT)/arm-pc-macos-gnu
-arm-pc-macos-msvc:       TARGETDIR := $(TARGETROOT)/arm-pc-macos-msvc
-arm-pc-windows-gnu:      TARGETDIR := $(TARGETROOT)/arm-pc-windows-gnu
-arm-pc-windows-msvc:     TARGETDIR := $(TARGETROOT)/arm-pc-windows-msvc
-arm64-pc-fuchsia-gnu:    TARGETDIR := $(TARGETROOT)/arm64-pc-fuchsia-gnu
-arm64-pc-fuchsia-msvc:   TARGETDIR := $(TARGETROOT)/arm64-pc-fuchsia-msvc
-arm64-pc-linux-gnu:      TARGETDIR := $(TARGETROOT)/arm64-pc-linux-gnu
-arm64-pc-linux-msvc:     TARGETDIR := $(TARGETROOT)/arm64-pc-linux-msvc
-arm64-pc-macos-gnu:      TARGETDIR := $(TARGETROOT)/arm64-pc-macos-gnu
-arm64-pc-macos-msvc:     TARGETDIR := $(TARGETROOT)/arm64-pc-macos-msvc
-arm64-pc-windows-gnu:    TARGETDIR := $(TARGETROOT)/arm64-pc-windows-gnu
-arm64-pc-windows-msvc:   TARGETDIR := $(TARGETROOT)/arm64-pc-windows-msvc
-i386-pc-fuchsia-gnu:     TARGETDIR := $(TARGETROOT)/i386-pc-fuchsia-gnu
-i386-pc-fuchsia-msvc:    TARGETDIR := $(TARGETROOT)/i386-pc-fuchsia-msvc
-i386-pc-linux-gnu:       TARGETDIR := $(TARGETROOT)/i386-pc-linux-gnu
-i386-pc-linux-msvc:      TARGETDIR := $(TARGETROOT)/i386-pc-linux-msvc
-i386-pc-macos-gnu:       TARGETDIR := $(TARGETROOT)/i386-pc-macos-gnu
-i386-pc-macos-msvc:      TARGETDIR := $(TARGETROOT)/i386-pc-macos-msvc
-i386-pc-windows-gnu:     TARGETDIR := $(TARGETROOT)/i386-pc-windows-gnu
-i386-pc-windows-msvc:    TARGETDIR := $(TARGETROOT)/i386-pc-windows-msvc
-riscv32-pc-fuchsia-gnu:  TARGETDIR := $(TARGETROOT)/riscv32-pc-fuchsia-gnu
-riscv32-pc-fuchsia-msvc: TARGETDIR := $(TARGETROOT)/riscv32-pc-fuchsia-msvc
-riscv32-pc-linux-gnu:    TARGETDIR := $(TARGETROOT)/riscv32-pc-linux-gnu
-riscv32-pc-linux-msvc:   TARGETDIR := $(TARGETROOT)/riscv32-pc-linux-msvc
-riscv32-pc-macos-gnu:    TARGETDIR := $(TARGETROOT)/riscv32-pc-macos-gnu
-riscv32-pc-macos-msvc:   TARGETDIR := $(TARGETROOT)/riscv32-pc-macos-msvc
-riscv32-pc-windows-gnu:  TARGETDIR := $(TARGETROOT)/riscv32-pc-windows-gnu
-riscv32-pc-windows-msvc: TARGETDIR := $(TARGETROOT)/riscv32-pc-windows-msvc
-riscv64-pc-fuchsia-gnu:  TARGETDIR := $(TARGETROOT)/riscv64-pc-fuchsia-gnu
-riscv64-pc-fuchsia-msvc: TARGETDIR := $(TARGETROOT)/riscv64-pc-fuchsia-msvc
-riscv64-pc-linux-gnu:    TARGETDIR := $(TARGETROOT)/riscv64-pc-linux-gnu
-riscv64-pc-linux-msvc:   TARGETDIR := $(TARGETROOT)/riscv64-pc-linux-msvc
-riscv64-pc-macos-gnu:    TARGETDIR := $(TARGETROOT)/riscv64-pc-macos-gnu
-riscv64-pc-macos-msvc:   TARGETDIR := $(TARGETROOT)/riscv64-pc-macos-msvc
-riscv64-pc-windows-gnu:  TARGETDIR := $(TARGETROOT)/riscv64-pc-windows-gnu
-riscv64-pc-windows-msvc: TARGETDIR := $(TARGETROOT)/riscv64-pc-windows-msvc
-x86_64-pc-fuchsia-gnu:   TARGETDIR := $(TARGETROOT)/x86_64-pc-fuchsia-gnu
-x86_64-pc-fuchsia-msvc:  TARGETDIR := $(TARGETROOT)/x86_64-pc-fuchsia-msvc
-x86_64-pc-linux-gnu:     TARGETDIR := $(TARGETROOT)/x86_64-pc-linux-gnu
-x86_64-pc-linux-msvc:    TARGETDIR := $(TARGETROOT)/x86_64-pc-linux-msvc
-x86_64-pc-macos-gnu:     TARGETDIR := $(TARGETROOT)/x86_64-pc-macos-gnu
-x86_64-pc-macos-msvc:    TARGETDIR := $(TARGETROOT)/x86_64-pc-macos-msvc
-x86_64-pc-windows-gnu:   TARGETDIR := $(TARGETROOT)/x86_64-pc-windows-gnu
-x86_64-pc-windows-msvc:  TARGETDIR := $(TARGETROOT)/x86_64-pc-windows-msvc
-
 .PHONY: all
 all: $(TARGETLIST)
 
@@ -131,7 +76,6 @@ lib km um:
 
 $(TARGETLIST):
 	# ============================================================ #
-	# TARGETDIR: $(TARGETDIR)
 	# $@
 	# $%
 	# $<
@@ -141,9 +85,9 @@ $(TARGETLIST):
 	# $|
 	# $*
 	# ============================================================ #
-	mkdir -p $(TARGETROOT)/$@
+	mkdir -p obj.$@
 	mkdir -p lib.$@
-	$(MAKE) -f Makefile.lib TARGETDIR=$(TARGETROOT)/$@ TARGET=$@
+	$(MAKE) -f Makefile.lib TARGETDIR=obj.$@ TARGET=$@
 
 .PHONY: format
 format:
@@ -155,4 +99,6 @@ dist:
 
 .PHONY: clean
 clean:
-	rm -rf releases/
+	rm -rf libxx.tar
+	rm -rf $(addprefix obj., $(TARGETLIST))
+	rm -rf $(addprefix lib., $(TARGETLIST))
