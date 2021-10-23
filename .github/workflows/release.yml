@@ -156,8 +156,8 @@ jobs:
     - name: x86_64-pc-windows-msvc
       run: make x86_64-pc-windows-msvc
 
-    - name: pack
-      run: tar -cf libxx.tar lib.* include/
+    - name: dist
+      run: make dist
 
     - name: release
       uses: softprops/action-gh-release@v0.1.13

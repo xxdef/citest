@@ -149,6 +149,10 @@ $(TARGETLIST):
 format:
 	$(MAKE) -f Makefile.lib format
 
+.PHONY: dist
+dist:
+	tar cf libxx.tar lib.* include/
+
 .PHONY: clean
 clean:
 	rm -rf releases/
