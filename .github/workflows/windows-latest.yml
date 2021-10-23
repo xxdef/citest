@@ -1,4 +1,4 @@
-name: windows-2016
+name: windows-latest
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   check:
-    runs-on: windows-2016
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
