@@ -2,21 +2,12 @@
 export ROOTDIR
 export TARGETROOT
 export TARGETLIST
-export CLANG_SUFFIX
 
 
 ROOTDIR    =
 TARGETROOT =
 TARGETDIR  =
 
-
-ifneq ($(shell which clang-13),)
-	CLANG_SUFFIX = -13
-else ifneq ($(shell which clang-12),)
-	CLANG_SUFFIX = -12
-else
-	CLANG_SUFFIX =
-endif
 
 ifneq ($(shell which cygpath.exe),)
 	# powershell or cygwin
@@ -26,7 +17,7 @@ else
 endif
 
 
-TARGETROOT = $(ROOTDIR)/releases
+TARGETROOT = $(ROOTDIR)/release
 
 
 # See: https://clang.llvm.org/docs/CrossCompilation.html#target-triple
@@ -151,6 +142,7 @@ $(TARGETLIST):
 	# $*
 	# ============================================================ #
 	mkdir -p $(TARGETROOT)/$@
+	mkdir -p lib.$@
 	$(MAKE) -f Makefile.lib TARGETDIR=$(TARGETROOT)/$@ TARGET=$@
 
 .PHONY: format
