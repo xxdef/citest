@@ -156,6 +156,9 @@ jobs:
     - name: x86_64-pc-windows-msvc
       run: make x86_64-pc-windows-msvc
 
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
     - name: Kernel-mode
       run: |
         bash -c "date +%s -s @1312732800"
