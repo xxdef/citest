@@ -31,8 +31,8 @@ jobs:
     # - name: arm-pc-macos-msvc
     #   run: make arm-pc-macos-msvc
 
-    - name: arm-pc-windows-gnu
-      run: make arm-pc-windows-gnu
+    # - name: arm-pc-windows-gnu
+    #   run: make arm-pc-windows-gnu
 
     - name: arm-pc-windows-msvc
       run: make arm-pc-windows-msvc
@@ -55,8 +55,8 @@ jobs:
     # - name: arm64-pc-macos-msvc
     #   run: make arm64-pc-macos-msvc
 
-    - name: arm64-pc-windows-gnu
-      run: make arm64-pc-windows-gnu
+    # - name: arm64-pc-windows-gnu
+    #   run: make arm64-pc-windows-gnu
 
     - name: arm64-pc-windows-msvc
       run: make arm64-pc-windows-msvc
@@ -79,8 +79,8 @@ jobs:
     # - name: i386-pc-macos-msvc
     #   run: make i386-pc-macos-msvc
 
-    - name: i386-pc-windows-gnu
-      run: make i386-pc-windows-gnu
+    # - name: i386-pc-windows-gnu
+    #   run: make i386-pc-windows-gnu
 
     - name: i386-pc-windows-msvc
       run: make i386-pc-windows-msvc
@@ -103,8 +103,8 @@ jobs:
     # - name: riscv32-pc-macos-msvc
     #   run: make riscv32-pc-macos-msvc
 
-    # - name: riscv32-pc-windows-gnu
-    #   run: make riscv32-pc-windows-gnu
+    # # - name: riscv32-pc-windows-gnu
+    # #   run: make riscv32-pc-windows-gnu
 
     # - name: riscv32-pc-windows-msvc
     #   run: make riscv32-pc-windows-msvc
@@ -127,8 +127,8 @@ jobs:
     # - name: riscv64-pc-macos-msvc
     #   run: make riscv64-pc-macos-msvc
 
-    # - name: riscv64-pc-windows-gnu
-    #   run: make riscv64-pc-windows-gnu
+    # # - name: riscv64-pc-windows-gnu
+    # #   run: make riscv64-pc-windows-gnu
 
     # - name: riscv64-pc-windows-msvc
     #   run: make riscv64-pc-windows-msvc
@@ -151,8 +151,8 @@ jobs:
     # - name: x86_64-pc-macos-msvc
     #   run: make x86_64-pc-macos-msvc
 
-    - name: x86_64-pc-windows-gnu
-      run: make x86_64-pc-windows-gnu
+    # - name: x86_64-pc-windows-gnu
+    #   run: make x86_64-pc-windows-gnu
 
     - name: x86_64-pc-windows-msvc
       run: make x86_64-pc-windows-msvc
