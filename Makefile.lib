@@ -80,7 +80,7 @@ lib.arm-pc-macos-msvc:                                 $(LIST_O)
 	$(AR) rcs --format=gnu $(ROOTDIR)/$@/libxx.a         $(LIST_O)
 
 lib.arm-pc-windows-gnu:                                $(LIST_O)
-	$(LIB) /machine:arm /out:$(ROOTDIR)/$@/libxx.lib     $(LIST_O)
+	$(LIB) /machine:arm /out:$(ROOTDIR)/$@/libxx.a       $(LIST_O)
 
 lib.arm-pc-windows-msvc:                               $(LIST_O)
 	$(LIB) /machine:arm /out:$(ROOTDIR)/$@/libxx.lib     $(LIST_O)
@@ -104,7 +104,7 @@ lib.arm64-pc-macos-msvc:                               $(LIST_O)
 	$(AR) rcs --format=gnu $(ROOTDIR)/$@/libxx.a         $(LIST_O)
 
 lib.arm64-pc-windows-gnu:                              $(LIST_O)
-	$(LIB) /machine:arm64 /out:$(ROOTDIR)/$@/libxx.lib   $(LIST_O)
+	$(LIB) /machine:arm64 /out:$(ROOTDIR)/$@/libxx.a     $(LIST_O)
 
 lib.arm64-pc-windows-msvc:                             $(LIST_O)
 	$(LIB) /machine:arm64 /out:$(ROOTDIR)/$@/libxx.lib   $(LIST_O)
@@ -128,7 +128,7 @@ lib.i386-pc-macos-msvc:                                $(LIST_O)
 	$(AR) rcs --format=gnu $(ROOTDIR)/$@/libxx.a         $(LIST_O)
 
 lib.i386-pc-windows-gnu:                               $(LIST_O)
-	$(LIB) /machine:x86 /out:$(ROOTDIR)/$@/libxx.lib     $(LIST_O)
+	$(LIB) /machine:x86 /out:$(ROOTDIR)/$@/libxx.a       $(LIST_O)
 
 lib.i386-pc-windows-msvc:                              $(LIST_O)
 	$(LIB) /machine:x86 /out:$(ROOTDIR)/$@/libxx.lib     $(LIST_O)
@@ -152,7 +152,7 @@ lib.riscv32-pc-macos-msvc:                             $(LIST_O)
 	$(AR) rcs --format=gnu $(ROOTDIR)/$@/libxx.a         $(LIST_O)
 
 lib.riscv32-pc-windows-gnu:                            $(LIST_O)
-	$(LIB) /machine:riscv32 /out:$(ROOTDIR)/$@/libxx.lib $(LIST_O)
+	$(LIB) /machine:riscv32 /out:$(ROOTDIR)/$@/libxx.a   $(LIST_O)
 
 lib.riscv32-pc-windows-msvc:                           $(LIST_O)
 	$(LIB) /machine:riscv32 /out:$(ROOTDIR)/$@/libxx.lib $(LIST_O)
@@ -176,7 +176,7 @@ lib.riscv64-pc-macos-msvc:                             $(LIST_O)
 	$(AR) rcs --format=gnu $(ROOTDIR)/$@/libxx.a         $(LIST_O)
 
 lib.riscv64-pc-windows-gnu:                            $(LIST_O)
-	$(LIB) /machine:riscv64 /out:$(ROOTDIR)/$@/libxx.lib $(LIST_O)
+	$(LIB) /machine:riscv64 /out:$(ROOTDIR)/$@/libxx.a   $(LIST_O)
 
 lib.riscv64-pc-windows-msvc:                           $(LIST_O)
 	$(LIB) /machine:riscv64 /out:$(ROOTDIR)/$@/libxx.lib $(LIST_O)
@@ -200,7 +200,7 @@ lib.x86_64-pc-macos-msvc:                              $(LIST_O)
 	$(AR) rcs --format=gnu $(ROOTDIR)/$@/libxx.a         $(LIST_O)
 
 lib.x86_64-pc-windows-gnu:                             $(LIST_O)
-	$(LIB) /machine:x64 /out:$(ROOTDIR)/$@/libxx.lib     $(LIST_O)
+	$(LIB) /machine:x64 /out:$(ROOTDIR)/$@/libxx.a       $(LIST_O)
 
 lib.x86_64-pc-windows-msvc:                            $(LIST_O)
 	$(LIB) /machine:x64 /out:$(ROOTDIR)/$@/libxx.lib     $(LIST_O)
