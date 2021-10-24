@@ -176,10 +176,10 @@ jobs:
         x86\signtool.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x64\Release\km.sys
         x86\signtool.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x86\Debug\km.sys
         x86\signtool.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x86\Release\km.sys
-        bash -c "cp x64\\Debug\\km.sys   ../km64d.sys"
-        bash -c "cp x64\\Release\\km.sys ../km64.sys"
-        bash -c "cp x86\\Debug\\km.sys   ../km32d.sys"
-        bash -c "cp x86\\Release\\km.sys ../km32.sys"
+        bash -c "cp x64/Debug/km.sys   ../km64d.sys"
+        bash -c "cp x64/Release/km.sys ../km64.sys"
+        bash -c "cp x86/Debug/km.sys   ../km32d.sys"
+        bash -c "cp x86/Release/km.sys ../km32.sys"
         cd ..
 
     - name: dist
