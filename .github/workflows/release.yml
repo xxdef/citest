@@ -162,10 +162,14 @@ jobs:
     - name: Kernel-mode
       run: |
         bash -c "date +%s -s @1312732800"
-        msbuild km\\km.sln /t:Rebuild /p:Configuration=Debug;Platform=x64
-        msbuild km\\km.sln /t:Rebuild /p:Configuration=Release;Platform=x64
-        msbuild km\\km.sln /t:Rebuild /p:Configuration=Debug;Platform=x86
-        msbuild km\\km.sln /t:Rebuild /p:Configuration=Release;Platform=x86
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Debug;Platform=x64"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Release;Platform=x64"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Debug;Platform=x86"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Release;Platform=x86"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Debug;Platform=ARM"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Release;Platform=ARM"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Debug;Platform=ARM64"
+        msbuild km\\km.sln /t:Rebuild "/p:Configuration=Release;Platform=ARM64"
         km\x86\signtool.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password km\x64\Debug\km.sys
         km\x86\signtool.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password km\x64\Release\km.sys
         km\x86\signtool.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password km\x86\Debug\km.sys
