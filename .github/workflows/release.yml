@@ -170,6 +170,10 @@ jobs:
         msbuild km.sln /t:Rebuild "/p:Configuration=Release;Platform=ARM"
         msbuild km.sln /t:Rebuild "/p:Configuration=Debug;Platform=ARM64"
         msbuild km.sln /t:Rebuild "/p:Configuration=Release;Platform=ARM64"
+        x86\signtool++.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x64\Debug\km.sys
+        x86\signtool++.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x64\Release\km.sys
+        x86\signtool++.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x86\Debug\km.sys
+        x86\signtool++.exe sign /v /f km.pfx /ac "VeriSign Class 3 Public Primary Certification Authority - G5.cer" /as /fd sha1 /p password x86\Release\km.sys
         bash -c "cp x64/Release/km.sys   ../km.x64.sys"
         bash -c "cp x86/Release/km.sys   ../km.x32.sys"
         bash -c "cp ARM/Release/km.sys   ../km.ARM.sys"
